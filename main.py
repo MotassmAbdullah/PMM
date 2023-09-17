@@ -117,17 +117,17 @@ def interp(): return None
 if __name__ == '__main__':
     st.set_page_config("PMM", ":rocket:")
     st.title("PMM Simulator")
-    with st.sidebar:
-        with st.spinner("Loading...تحميل"):
-            time.sleep(2)
-    st.sidebar.title("PMM 0.5v")
     # st.sidebar.write("For more info")
     # st.sidebar.markdown("Link", True)
     # st.text("0.0.5 (Privet)")
     # st.session_state
 
     if "page" not in st.session_state:
+        with st.sidebar:
+            with st.spinner("Loading...تحميل"):
+                time.sleep(2)
         st.session_state.page = 0
+    st.sidebar.title("PMM 0.5v")
     # st.session_state
     # st.session_state.R_D_l = np.array(None)
     if st.session_state.page == 0:
